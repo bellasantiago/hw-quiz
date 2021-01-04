@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />;
+
+    <title>Coding Bootcamp Quiz</title>
+  </head>
+  <body>
+   <div class="wrapper">
+        <!-- Quiz Opening -->
+        <div class="container mt-sm-5 my-1 firstScreen">
+        <div class="container ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h4"><b>WELCOME TO THE CODING QUIZ!</b></div><br>
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3"><p>You'll answer the multiple choice 10 question quiz.<br><br>You'll have 10 seconds per question.<br><br>For each correct answer, you'll move to the next question with no penalties.<br><br>For each incorrect question, you'll lose 5 seconds on the timer. Your goal is to get a final score of 0 or more.<br><br>At the end, you'll be able to enter your name into the Highscore board.<br><br>Have fun!
+            </p></div>
+        </div>
+        <div class="d-flex align-items-center pt-3">
+            <div class="ml-auto mr-sm-5"> <button class="btn btn-success">Next</button> </div>
+        </div>
+        </div>
+
+       <!-- Highscores link and timer within -->
+        <div class="d-none container mt-sm-5 my-1 inGameTitle">
+            <p>See Highscores</p>
+        </div>
+
+        <!-- Questions contained within below -->
+        <div class="d-none container mt-sm-5 my-1 inGameQuestion1">
+        <div class="container ml-sm-5 pl-sm-5 pt-2">
+            <div class="py-2 h5"><b>Q. which option best describes your job role?</b></div>
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> <label class="options">Small Business Owner or Employee <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Nonprofit Owner or Employee <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Journalist or Activist <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label class="options">Other <input type="radio" name="radio"> <span class="checkmark"></span> </label> </div>
+        </div>
+        <div class="d-flex align-items-center pt-3">
+            <div id="prev"> <button class="btn btn-primary">Previous</button> </div>
+            <div class="ml-auto mr-sm-5"> <button class="btn btn-success">Next</button> </div>
+        </div>
+        </div>
+
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
