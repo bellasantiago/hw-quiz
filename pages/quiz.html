@@ -26,43 +26,44 @@
                     <a class="btn btn-light" href="./highscore.html" role="button">See Highscores</a>
                   </div>
                   <div class="col-sm">
-                    <h5>TIME LEFT: 100 seconds</h5>
+                    <h5>TIME LEFT: <span id="countdown">100</span> seconds</h5>
                   </div>
                 </div>
               </div>
         </div>
 
         <!-- Questions contained within below -->
-        <div class="container mt-sm-5 my-1 inGameQuestion1">
+        <div class="container mt-sm-5 my-1 quizContainer" id="quizContainer" style="display:block">
             <div class="container ml-sm-5 pl-sm-5 pt-2">
-                <div class="py-2 h5">QUESTION</div>
+                <div class="py-2 h5 question" id="question">Question??</div>
             </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">ANSWER1</button>
-                <button class="btn btn-primary" type="button">ANSWER2</button>
-                <button class="btn btn-primary" type="button">ANSWER3</button>
-                <button class="btn btn-primary" type="button">ANSWER4</button>
+            <div class="d-grid gap-2" id="choices" >
+                <button class="btn btn-primary choice" id="A" type="button">ANSWER1</button>
+                <button class="btn btn-primary choice" id="B" type="button">ANSWER2</button>
+                <button class="btn btn-primary choice" id="C" type="button">ANSWER3</button>
+                <button class="btn btn-primary choice" id="D" type="button">ANSWER4</button>
             </div>
         </div>
-        <div class="container mt-sm-5 my-1 inGameResult">
+        <!-- Feedback on the answer selection stored below -->
+        <div class="container mt-sm-5 my-1 inGameResult" id="inGameResult" style="display:block">
            
           </div>
     </div>
 
         <!-- Quiz Result -->
-        <div class="container mt-sm-5 my-1 quizResult">
+        <div class="container mt-sm-5 my-1 quizResult" id="quizResult" style="display:none">
             <div class="container ml-sm-5 pl-sm-5 pt-2">
                 <div class="py-2 h4"><b>YOUR SCORE:</b></div><br>
-                <div class="results">
+                <div class="results" id="userFinalScore">
                     
                 </div>
             </div>
             <div class="d-flex align-items-center pt-3">
                 <div class="input-group">
-                    <span class="input-group-text">Enter Your Initials</span>
+                    <span class="input-group-text" id="input-group-text">Enter Your Initials</span>
                     <input type="text" aria-label="initals" class="form-control">
                   </div>
-                <div class="ml-auto mr-sm-5"> <button class="btn btn-primary">Submit</button> </div>
+                <div class="ml-auto mr-sm-5"> <button class="btn btn-primary" id="submitBtn">Submit</button> </div>
             </div>
         </div>
 
@@ -70,7 +71,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <script src="../assets/script.js"></script>
+    <script src="../assets/quizScript.js"></script>
 </body>
 
 </html>
