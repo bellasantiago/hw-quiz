@@ -7,9 +7,10 @@ var choiceC = document.querySelector("#C");
 var choiceD = document.querySelector("#D");
 var quizContainer = document.querySelector("#quizContainer");
 var userChoice = document.querySelector("#choices");
-var userResults = document.querySelector("#inGameResult");
+var userFeedbackContainer = document.querySelector("#feedbackContainer");
+var userFeedback = document.querySelector("#userFeedback");
 var resultContainer = document.querySelector("#quizResult");
-var userFinalScore = document.querySelector("#userFinalScore");
+var userScoreDisplay = document.querySelector("#userFinalScore").textContent;
 var userInitials = document.querySelector("#input-group-text");
 var submit = document.querySelector("#submitBtn");
 
@@ -17,10 +18,11 @@ var submit = document.querySelector("#submitBtn");
 var countdown = setInterval(function () {
     seconds--;
     document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 0) clearInterval(countdown) //& 
-    //resultContainer.setAttribute("style", "display:block") &
-    //userResults.setAttribute("style", "display:none") &
-    //quizContainer.setAttribute("style", "display:none");
+    if (seconds <= 0) clearInterval(countdown) &
+        quizContainer.setAttribute("style", "display:none") &
+        userFeedbackContainer.setAttribute("style", "display:none") &
+        resultContainer.setAttribute("style", "display:block");
+        
 }, 1000);
 
 // Quiz questions
@@ -32,8 +34,6 @@ let questions = [
         choiceC: "JavaScript doesn't have any multithreading or multiprocess capabilities.",
         choiceD: "All of the above.",
         correct: "D",
-        userAnswer: "",
-        outcome: "false",
     }, {
         question: "Which of the following is true about cookie handling in JavaScript?",
         choiceA: "JavaScript can manipulate cookies using the cookie property of the Document object.",
@@ -103,25 +103,107 @@ let questions = [
 // Variables
 var runningQuestion = 0;
 var score = 0;
-console.log("Score " + score);
+var correctFeedback = "Last selection was CORRECT!"
+var incorrectFeedback = "Last selection was INCORRECT!"
+
 // Function to run the question
 function renderQuestion() {
+    if (runningQuestion <= 10) {
+        var q = questions[runningQuestion];
 
-    var q = questions[runningQuestion];
+        question.innerHTML = q.question;
+        choiceA.innerHTML = q.choiceA;
+        choiceB.innerHTML = q.choiceB;
+        choiceC.innerHTML = q.choiceC;
+        choiceD.innerHTML = q.choiceD;
+        correct = q.correct;
+    }
+    else {
+        console.log("end of questions!");
+    }
 
-    question.innerHTML = q.question;
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
+};
 
-    choiceA.addEventListener("click", function (event) {
-        console.log(event.target.id);
-        runningQuestion++;
-        renderQuestion();
-    })
+// On Click of option A
+choiceA.addEventListener("click", function (event) {
+    var userAnswer = event.target.id;
 
-}
+    if (userAnswer === correct) {
+        score += 10;
+        document.getElementById("userFinalScore").textContent = score;
+        document.getElementById("userFeedback").textContent = correctFeedback;
+    }
+    else {
+        seconds -= 10;
+        document.getElementById("userFeedback").textContent = incorrectFeedback;
+    }
+
+    runningQuestion++;
+    console.log(runningQuestion);
+    console.log(score);
+    renderQuestion();
+});
+
+// On Click of option B
+choiceB.addEventListener("click", function (event) {
+    var userAnswer = event.target.id;
+
+    if (userAnswer === correct) {
+        score += 10;
+        document.getElementById("userFinalScore").textContent = score;
+        document.getElementById("userFeedback").textContent = correctFeedback;
+    }
+    else {
+        seconds -= 10;
+        document.getElementById("userFeedback").textContent = incorrectFeedback;
+    }
+
+    runningQuestion++;
+    console.log(runningQuestion);
+    console.log(score);
+    renderQuestion();
+});
+
+// On Click of option C
+choiceC.addEventListener("click", function (event) {
+    var userAnswer = event.target.id;
+
+    if (userAnswer === correct) {
+        score += 10;
+        document.getElementById("userFinalScore").textContent = score;
+        document.getElementById("userFeedback").textContent = correctFeedback;
+    }
+    else {
+        seconds -= 10;
+        document.getElementById("userFeedback").textContent = incorrectFeedback;
+    }
+
+    runningQuestion++;
+    console.log(runningQuestion);
+    console.log(score);
+    renderQuestion();
+});
+
+// On Click of option D
+choiceD.addEventListener("click", function (event) {
+    var userAnswer = event.target.id;
+
+    if (userAnswer === correct) {
+        score += 10;
+        document.getElementById("userFinalScore").textContent = score;
+        document.getElementById("userFeedback").textContent = correctFeedback;
+    }
+    else {
+        seconds -= 10;
+        document.getElementById("userFeedback").textContent = incorrectFeedback;
+    }
+
+    runningQuestion++;
+    console.log(runningQuestion);
+    console.log(score);
+    renderQuestion();
+});
+
 
 // Calling the Question Function
 renderQuestion();
