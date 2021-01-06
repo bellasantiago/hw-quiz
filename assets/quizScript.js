@@ -22,7 +22,7 @@ var countdown = setInterval(function () {
         quizContainer.setAttribute("style", "display:none") &
         userFeedbackContainer.setAttribute("style", "display:none") &
         resultContainer.setAttribute("style", "display:block");
-        
+
 }, 1000);
 
 // Quiz questions
@@ -106,25 +106,20 @@ var score = 0;
 var correctFeedback = "Last selection was CORRECT!"
 var incorrectFeedback = "Last selection was INCORRECT!"
 
+
 // Function to run the question
 function renderQuestion() {
-    if (runningQuestion <= 10) {
-        var q = questions[runningQuestion];
+    var q = questions[runningQuestion];
 
-        question.innerHTML = q.question;
-        choiceA.innerHTML = q.choiceA;
-        choiceB.innerHTML = q.choiceB;
-        choiceC.innerHTML = q.choiceC;
-        choiceD.innerHTML = q.choiceD;
-        correct = q.correct;
-    }
-    else {
-        console.log("end of questions!");
-    }
-
+    question.innerHTML = q.question;
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+    choiceD.innerHTML = q.choiceD;
+    correct = q.correct;
 };
 
-// On Click of option A
+// Event On Click of option A
 choiceA.addEventListener("click", function (event) {
     var userAnswer = event.target.id;
 
@@ -134,17 +129,24 @@ choiceA.addEventListener("click", function (event) {
         document.getElementById("userFeedback").textContent = correctFeedback;
     }
     else {
-        seconds -= 10;
+        seconds -= 5;
         document.getElementById("userFeedback").textContent = incorrectFeedback;
     }
 
     runningQuestion++;
     console.log(runningQuestion);
     console.log(score);
-    renderQuestion();
+
+    if (runningQuestion < 10) {
+        renderQuestion();
+    }
+    else {
+        endGame();
+    }
+
 });
 
-// On Click of option B
+// Event On Click of option B
 choiceB.addEventListener("click", function (event) {
     var userAnswer = event.target.id;
 
@@ -154,17 +156,23 @@ choiceB.addEventListener("click", function (event) {
         document.getElementById("userFeedback").textContent = correctFeedback;
     }
     else {
-        seconds -= 10;
+        seconds -= 5;
         document.getElementById("userFeedback").textContent = incorrectFeedback;
     }
 
     runningQuestion++;
     console.log(runningQuestion);
     console.log(score);
-    renderQuestion();
+
+    if (runningQuestion < 10) {
+        renderQuestion();
+    }
+    else {
+        endGame();
+    }
 });
 
-// On Click of option C
+// Event On Click of option C
 choiceC.addEventListener("click", function (event) {
     var userAnswer = event.target.id;
 
@@ -174,17 +182,23 @@ choiceC.addEventListener("click", function (event) {
         document.getElementById("userFeedback").textContent = correctFeedback;
     }
     else {
-        seconds -= 10;
+        seconds -= 5;
         document.getElementById("userFeedback").textContent = incorrectFeedback;
     }
 
     runningQuestion++;
     console.log(runningQuestion);
     console.log(score);
-    renderQuestion();
+
+    if (runningQuestion < 10) {
+        renderQuestion();
+    }
+    else {
+        endGame();
+    }
 });
 
-// On Click of option D
+// Event On Click of option D
 choiceD.addEventListener("click", function (event) {
     var userAnswer = event.target.id;
 
@@ -194,16 +208,30 @@ choiceD.addEventListener("click", function (event) {
         document.getElementById("userFeedback").textContent = correctFeedback;
     }
     else {
-        seconds -= 10;
+        seconds -= 5;
         document.getElementById("userFeedback").textContent = incorrectFeedback;
     }
 
     runningQuestion++;
     console.log(runningQuestion);
     console.log(score);
-    renderQuestion();
+
+    if (runningQuestion < 10) {
+        renderQuestion();
+    }
+    else {
+        endGame();
+    }
 });
 
 
 // Calling the Question Function
 renderQuestion();
+
+function endGame() {
+    clearInterval(countdown);
+    document.getElementById("countdown").textContent = 0;
+    quizContainer.setAttribute("style", "display:none");
+    userFeedbackContainer.setAttribute("style", "display:none");
+    resultContainer.setAttribute("style", "display:block");
+};
