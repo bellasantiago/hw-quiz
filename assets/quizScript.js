@@ -18,7 +18,7 @@ var submit = document.querySelector("#submitBtn");
 var countdown = setInterval(function () {
     seconds--;
     document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 00) clearInterval(countdown) &
+    if (seconds <= 0) clearInterval(countdown) &
         quizContainer.setAttribute("style", "display:none") &
         userFeedbackContainer.setAttribute("style", "display:none") &
         resultContainer.setAttribute("style", "display:block");
