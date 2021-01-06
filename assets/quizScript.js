@@ -11,14 +11,14 @@ var userFeedbackContainer = document.querySelector("#feedbackContainer");
 var userFeedback = document.querySelector("#userFeedback");
 var resultContainer = document.querySelector("#quizResult");
 var userScoreDisplay = document.querySelector("#userFinalScore").textContent;
-var userInitials = document.querySelector("#input-group-text");
+var userInitials = document.querySelector("#userInitial");
 var submit = document.querySelector("#submitBtn");
 
 // Function for the quiz timer - Currently stops at 0 seconds and hides question/feedback container and shows user initial submission form and total score.
 var countdown = setInterval(function () {
     seconds--;
     document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 0) clearInterval(countdown) &
+    if (seconds <= 95) clearInterval(countdown) &
         quizContainer.setAttribute("style", "display:none") &
         userFeedbackContainer.setAttribute("style", "display:none") &
         resultContainer.setAttribute("style", "display:block");
@@ -224,7 +224,6 @@ choiceD.addEventListener("click", function (event) {
     }
 });
 
-
 // Calling the Question Function
 renderQuestion();
 
@@ -235,3 +234,18 @@ function endGame() {
     userFeedbackContainer.setAttribute("style", "display:none");
     resultContainer.setAttribute("style", "display:block");
 };
+
+var highScore = [];
+
+// Storing player's initials and score
+submit.addEventListener("click", function (event) {
+    event.preventDefault();
+    
+    var newScore = userInitials.value.trim();
+
+      highScore.push(newScore + " " + score + " total points!");
+      console.log(highScore + " points!");
+      window.localStorage.setItem("highScore", highScore);
+
+    //window.location.href="../pages/highscore.html"
+});

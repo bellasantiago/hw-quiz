@@ -22,12 +22,13 @@
         <div class="d-block container mt-sm-5 my-1 firstScreen">
             <div class="container ml-sm-5 pl-sm-5 pt-2">
                 <div class="py-2 h4"><b>HIGHSCORE BOARD!</b></div><br>
-                <div class="savedHighscore">
-                
+                <div class="savedHighscore" id="board">
+                    <ul id="board-list"></ul>
                 </div>
             </div>
             <div class="d-flex align-items-center pt-3">
-                <div class="ml-auto mr-sm-5"> <a class="btn btn-primary" href="../index.html" role="button">Start Over</a> </div>
+                <div class="ml-auto mr-sm-5"> <a class="btn btn-success" href="../index.html" role="button">Start Over</a></div>
+                <div class="ml-auto mr-sm-5"> <a class="btn btn-primary" role="button" id="clearBtn">Clear HighScores</a> </div>
             </div>
         </div>
     </div>
@@ -36,7 +37,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <script src="../assets/script.js"></script>
+        <script src="../assets/highscore.js"></script>
 </body>
 
 </html>
