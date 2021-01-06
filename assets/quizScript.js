@@ -18,7 +18,7 @@ var submit = document.querySelector("#submitBtn");
 var countdown = setInterval(function () {
     seconds--;
     document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 95) clearInterval(countdown) &
+    if (seconds <= 00) clearInterval(countdown) &
         quizContainer.setAttribute("style", "display:none") &
         userFeedbackContainer.setAttribute("style", "display:none") &
         resultContainer.setAttribute("style", "display:block");
@@ -235,17 +235,17 @@ function endGame() {
     resultContainer.setAttribute("style", "display:block");
 };
 
+// Empty variable to store user input of name and score
 var highScore = [];
 
-// Storing player's initials and score
+// Storing player's name and score in the local storage
 submit.addEventListener("click", function (event) {
     event.preventDefault();
-    
+
     var newScore = userInitials.value.trim();
 
-      highScore.push(newScore + " " + score + " total points!");
-      console.log(highScore + " points!");
-      window.localStorage.setItem("highScore", highScore);
+    highScore.push(newScore + " " + score + " total points!");
+    window.localStorage.setItem("highScore", highScore);
 
-    //window.location.href="../pages/highscore.html"
+    window.location.href = "../pages/highscore.html"
 });
