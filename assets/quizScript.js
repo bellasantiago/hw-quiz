@@ -236,7 +236,7 @@ function endGame() {
 };
 
 // Empty variable to store user input of name and score
-var highScore = [];
+const highScoreBoard = JSON.parse(localStorage.getItem("highScoreBoard"));
 
 // Storing player's name and score in the local storage
 submit.addEventListener("click", function (event) {
@@ -244,8 +244,9 @@ submit.addEventListener("click", function (event) {
 
     var newScore = userInitials.value.trim();
 
-    highScore.push(newScore + " " + score + " total points!");
-    window.localStorage.setItem("highScore", highScore);
+    highScoreBoard.push(newScore + " " + score + " total points!");
+
+    localStorage.setItem("highScoreBoard", JSON.stringify(highScoreBoard));
 
     window.location.href = "../pages/highscore.html"
 });

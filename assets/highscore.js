@@ -4,16 +4,16 @@ var board = document.querySelector("#board");
 var boardList = document.querySelector("#board-list");
 
 // Retrieve scores stored in the local storage and add them to a new variable
-var highScore = [
-  localStorage.getItem("highScore", highScore),
+var highScoreBoard = [
+  localStorage.getItem("highScoreBoard", highScoreBoard),
 ]
 
 // Function to render stored scored as a new list item
 function renderHighScore() {
 
   // Render a new li for each stored score
-  for (var i = 0; i < highScore.length; i++) {
-    var users = highScore[i];
+  for (var i = 0; i < highScoreBoard.length; i++) {
+    var users = highScoreBoard[i];
 
     var li = document.createElement("li");
     li.textContent = users;
@@ -25,5 +25,6 @@ renderHighScore();
 
 // Function to reset highscores
 clearBtn.addEventListener("click", function () {
-  window.localStorage.clear("highscore", highScore);
+  $("#board-list").empty();
+  window.localStorage.clear("highscoreBoard", highScoreBoard);
 });
