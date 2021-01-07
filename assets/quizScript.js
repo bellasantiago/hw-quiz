@@ -236,7 +236,15 @@ function endGame() {
 };
 
 // Empty variable to store user input of name and score
-const highScoreBoard = JSON.parse(localStorage.getItem("highScoreBoard"));
+var highScoreBoard = [];
+
+// Reaching for locally stored values
+if(localStorage.getItem('highScoreBoard')) {
+    highScoreBoard = localStorage.getItem('highScoreBoard');
+    highScoreBoard = JSON.parse(highScoreBoard);
+}   else {
+    highScoreBoard = [];
+};
 
 // Storing player's name and score in the local storage
 submit.addEventListener("click", function (event) {
@@ -248,5 +256,5 @@ submit.addEventListener("click", function (event) {
 
     localStorage.setItem("highScoreBoard", JSON.stringify(highScoreBoard));
 
-    window.location.href = "../pages/highscore.html"
+    //window.location.href = "../pages/highscore.html"
 });
