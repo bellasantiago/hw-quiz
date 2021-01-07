@@ -8,13 +8,14 @@ var highScoreBoard = [
   localStorage.getItem("highScoreBoard", highScoreBoard),
 ]
 
-// Function to render stored scored as a new list item
+// Convert stored data from string to an array
+const scoreData = JSON.parse(highScoreBoard);
+
 function renderHighScore() {
 
   // Render a new li for each stored score
-  for (var i = 0; i < highScoreBoard.length; i++) {
-    var users = highScoreBoard[i];
-
+  for (i = 0; i < scoreData.length; i++) {
+    var users = scoreData[i];
     var li = document.createElement("li");
     li.textContent = users;
     boardList.append(li);
