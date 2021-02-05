@@ -29,10 +29,10 @@ https://bellasantiago.github.io/hw-quiz
 https://github.com/bellasantiago/hw-quiz
 
 ## Finished Screenshots
-![Screenshot1](img/screenshot1.png)
-![Screenshot2](img/screenshot2.png)
-![Screenshot3](img/screenshot3.png)
-![Screenshot4](img/screenshot4.png)
+![Screenshot1](./img/screenshot1.png)
+![Screenshot2](./img/screenshot2.png)
+![Screenshot3](./img/screenshot3.png)
+![Screenshot4](./img/screenshot4.png)
 
 ## Contact the Creator
 bellasantiado.adl@gmail.com
