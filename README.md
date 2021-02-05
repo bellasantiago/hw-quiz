@@ -14,6 +14,14 @@ Each correct answer, the user is presented with a feedback under the questions o
 After all 10 questions or the clock reaches zero, which ever happens first, the user is presented with total score and a field to input their name.<br>
 Once user submits their name, the name and total score is stored in the local storage and the user is taken to the Highscore board where it can view all stores stored.
 
+## Technologies Used
+HTML5<br>
+CSS<br>
+JavaScript
+
+## License
+MIT
+
 ## Deployed application
 https://bellasantiago.github.io/hw-quiz
 
@@ -25,3 +33,6 @@ https://github.com/bellasantiago/hw-quiz
 ![Screenshot2](img/screenshot2.png)
 ![Screenshot3](img/screenshot3.png)
 ![Screenshot4](img/screenshot4.png)
+
+## Contact the Creator
+bellasantiado.adl@gmail.com
